@@ -1,0 +1,36 @@
+<!-- By: Wendell Bernardo -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style>
+body {
+	background-color: #f8f9fa;
+}
+
+.ui-analog-clock{
+	width: 200px;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem outcome="home" value="Home" />
+			<p:menuitem outcome="cadastro" value="Cadastro" />
+			<p:menuitem outcome="listagem" value="Listagem" />
+		</p:breadCrumb>
+	</h:form>
+	<div style="display: grid; justify-content: center; align-content: center">
+		<p:clock displayMode="analog" />
+	</div>
+
+	<p:card style="text-align: center">
+		<p>© Wendell Bernardo</p>
+	</p:card>
+</h:body>
+</html>

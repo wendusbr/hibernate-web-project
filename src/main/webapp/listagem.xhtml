@@ -1,37 +1,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-   xmlns:h="http://java.sun.com/jsf/html"
-   xmlns:f="http://java.sun.com/jsf/core"
-   xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-
+	<style>
+		body {
+	background-color: #f8f9fa;
+}
+	</style>
 </h:head>
 
 <h:body>
-   <h:form>
-        <p:dataTable var="usuario" value="#{UsuarioMB.usuarios}">
-              <p:column headerText="Id">
-                   <h:outputText value="#{usuario.id}" />
-              </p:column>
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem outcome="home" value="Home" />
+			<p:menuitem outcome="cadastro" value="Cadastro" />
+			<p:menuitem outcome="listagem" value="Listagem" />
+		</p:breadCrumb>
+	</h:form>
+	<h:form>
+		<p:dataTable var="usuario" value="#{UsuarioMB.usuarios}">
+			<p:column headerText="Id">
+				<h:outputText value="#{usuario.id}" />
+			</p:column>
 
-              <p:column headerText="Nome">
-                   <h:outputText value="#{usuario.nome}" />
-              </p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{usuario.nome}" />
+			</p:column>
 
-              <p:column headerText="Senha">
-                   <h:outputText value="#{usuario.senha}" />
-              </p:column>
+			<p:column headerText="Senha">
+				<h:outputText value="#{usuario.senha}" />
+			</p:column>
 
-              <p:column headerText="Descrição">
-                   <h:outputText value="#{usuario.descricao}" />
-              </p:column>
+			<p:column headerText="Descrição">
+				<h:outputText value="#{usuario.descricao}" />
+			</p:column>
 
-              <p:column headerText="Data de Cadastro">
-                   <h:outputText value="#{usuario.dataCadastro}" />
-              </p:column>
-        </p:dataTable>
+			<p:column headerText="Data de Cadastro">
+				<h:outputText value="#{usuario.dataCadastro}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
 
-
-   </h:form>
+	<p:card style="text-align: center">
+		<p>© Wendell Bernardo</p>
+	</p:card>
 </h:body>
 </html>

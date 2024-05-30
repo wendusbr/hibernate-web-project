@@ -1,36 +1,63 @@
 <!-- By: Wendell Bernardo -->
 
 <html xmlns="http://www.w3.org/1999/xhtml"
- 	xmlns:h="http://java.sun.com/jsf/html"
- 	xmlns:f="http://java.sun.com/jsf/core"
- 	xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
+	<style>
+body {
+	background-color: #f8f9fa;
+}
 
+</style>
 </h:head>
 
 <h:body>
- 	<h:form>
-      	<p:messages id="messages" />
-      	<p:panelGrid columns="2">
+	<h:form>
+		<p:breadCrumb>
+			<p:menuitem outcome="home" value="Home" />
+			<p:menuitem outcome="cadastro" value="Cadastro" />
+			<p:menuitem outcome="listagem" value="Listagem" />
+		</p:breadCrumb>
+	</h:form>
+	<p:messages id="messages" />
+	<div
+		style="display: grid; justify-content: center; align-content: center">
+		<p:card style="width: 512px; margin-bottom: 2em">
+			<h:form>
+				<p:panelGrid columns="1" layout="grid">				
+					<h1>Cadastro</h1>
 
-            	<p:outputLabel for="nome" value="Nome:" />
-            	<p:inputText id="nome" value="#{UsuarioMB.usuario.nome}" />
+					<p:outputLabel for="nome" value="Nome:" />
+					<p:inputText id="nome" value="#{UsuarioMB.usuario.nome}"
+						style="width: 100%" />
 
 
-            	<p:outputLabel for="senha" value="Senha:" />
-            	<p:inputText id="senha" value="#{UsuarioMB.usuario.senha}" />
+					<p:outputLabel for="senha" value="Senha:" />
+					<p:password id="senha" value="#{UsuarioMB.usuario.senha}"
+						style="width: 100%" />
 
 
-            	<p:outputLabel for="descricao" value="Descrição:" />
-            	<p:inputTextarea id="descricao"
-                 	value="#{UsuarioMB.usuario.descricao}" />
+					<p:outputLabel for="descricao" value="Descrição:" />
+					<p:inputTextarea id="descricao"
+						value="#{UsuarioMB.usuario.descricao}" style="width: 100%" />
+						
+					<p:outputLabel for="dataCadastro" value="Momento do cadastro:" />
+					<p:clock pattern="dd/MM/yyyy HH:mm:ss" id="dataCadastro" />
+							
+					<p:commandButton value="Inserir" icon="pi pi-save"
+						action="#{UsuarioMB.inserir}" update="messages"
+						style="width: 25%; margin-left: 75%">
+					</p:commandButton>
+				</p:panelGrid>
+			</h:form>
+		</p:card>
+	</div>
 
-            	<p:commandButton  value="Inserir" icon="ui-icon-star"
-             	action="#{UsuarioMB.inserir}" update="messages">
-            	</p:commandButton>
-
-      	</p:panelGrid>
- 	</h:form>
+	<p:card style="text-align: center">
+		<p>© Wendell Bernardo</p>
+	</p:card>
 </h:body>
 </html>
